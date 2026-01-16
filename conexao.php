@@ -1,20 +1,25 @@
 <?php
 date_default_timezone_set('America/Sao_Paulo');
 
-// No Railway, as variáveis podem vir com nomes ligeiramente diferentes
-// Vamos tentar capturar as mais comuns que eles fornecem
-$host    = getenv('MYSQLHOST') ?: "mysql.railway.internal";
-$banco   = getenv('MYSQLDATABASE') ?: "railway";
-$usuario = getenv('MYSQLUSER') ?: "root";
-$senha   = getenv('MYSQLPASSWORD') ?: "jQsLshftfeOPcomrUGqsdHsDagGFvGbi";
-$porta   = getenv('MYSQLPORT') ?: "3306";
+// Capturando as variáveis do ambiente Railway
+$host    = getenv('MYSQLHOST');
+$banco   = getenv('MYSQLDATABASE');
+$usuario = getenv('MYSQLUSER');
+$senha   = getenv('MYSQLPASSWORD');
+$porta   = getenv('MYSQLPORT');
+
+// Verificação de segurança: se o host estiver vazio, algo está errado nas variáveis
+if (!$host) {
+	die("Erro crítico: As variáveis de ambiente do Railway não foram detectadas no serviço web.");
+}
 
 try {
-	// Importante: Adicionamos a porta explicitamente na string de conexão
-	$pdo = new PDO("mysql:dbname=$banco;host=$host;port=$porta;charset=utf8", $usuario, $senha);
+	// No Railway, usamos o DSN completo para evitar falhas de porta ou host
+	$dsn = "mysql:host=$host;port=$porta;dbname=$banco;charset=utf8";
+	$pdo = new PDO($dsn, $usuario, $senha);
+
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (Exception $e) {
-	// Isso vai nos mostrar exatamente qual parâmetro está falhando
-	echo "Erro na conexão: " . $e->getMessage();
+} catch (PDOException $e) {
+	// Exibe o erro detalhado para sabermos se é senha ou host
+	echo "Erro ao conectar com o banco de dados: " . $e->getMessage();
 }
-?>
