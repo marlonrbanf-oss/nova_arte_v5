@@ -1,23 +1,20 @@
 <?php
-// 1. Configurações de fuso horário
 date_default_timezone_set('America/Sao_Paulo');
 
-// 2. Definição das variáveis de conexão
-// O comando getenv busca a configuração no Railway. 
-// Se não existir, ele usa o que está depois do '?:' (configuração do seu PC).
-$host    = getenv('MYSQLHOST') ?: "localhost";
-$banco   = getenv('MYSQLDATABASE') ?: "delivery"; // Nome do seu banco de dados local
+// No Railway, as variáveis podem vir com nomes ligeiramente diferentes
+// Vamos tentar capturar as mais comuns que eles fornecem
+$host    = getenv('MYSQLHOST') ?: "mysql.railway.internal";
+$banco   = getenv('MYSQLDATABASE') ?: "railway";
 $usuario = getenv('MYSQLUSER') ?: "root";
-$senha   = getenv('MYSQLPASSWORD') ?: "";
+$senha   = getenv('MYSQLPASSWORD') ?: "jQsLshftfeOPcomrUGqsdHsDagGFvGbi";
 $porta   = getenv('MYSQLPORT') ?: "3306";
 
 try {
-	// 3. Criando a conexão com PDO
-	// Incluímos a variável $porta para garantir que o Railway localize o banco
-	$pdo = new PDO("mysql:dbname=$banco;host=$host;port=$porta", $usuario, $senha);
-
-	// Ativa o modo de erro para nos ajudar caso algo falhe
+	// Importante: Adicionamos a porta explicitamente na string de conexão
+	$pdo = new PDO("mysql:dbname=$banco;host=$host;port=$porta;charset=utf8", $usuario, $senha);
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (Exception $e) {
-	echo "Erro ao conectar com o banco de dados! " . $e->getMessage();
+	// Isso vai nos mostrar exatamente qual parâmetro está falhando
+	echo "Erro na conexão: " . $e->getMessage();
 }
+?>
