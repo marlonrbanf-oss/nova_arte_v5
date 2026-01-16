@@ -58,7 +58,10 @@
                   data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <div class="rd-navbar-brand">
                   <a title="Ir para Página Inicial" class="brand" href="index.php">
-                    <img src="images/logo-default-196x47.png" alt="" width="196" height="47" />
+
+                    <img src="<?php echo $url_site ?>images/logo-default-196x47.png" alt=""
+                      width="196" height="47" />
+
                   </a>
                 </div>
               </div>

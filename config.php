@@ -6,7 +6,7 @@ $email_adm = 'marlonrbanf@gmail.com';
 // Se existir a variável MYSQLHOST (Railway), usamos a URL da nuvem.
 // Caso contrário, usamos o seu caminho do localhost.
 if (getenv('MYSQLHOST')) {
-    $url_site = 'https://web-production-84e3c.up.railway.app/';
+    $url_site = 'https://web-production-84e3c.up.railway.app/'; // Com a barra no final!
 } else {
     $url_site = 'http://localhost/sites/Template%20Nova%20arte/Template%20Inicial/site/';
 }
