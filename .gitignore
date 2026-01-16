@@ -1,0 +1,5 @@
+.env
+/vendor
+/opt
+*.log
+.DS_Store
