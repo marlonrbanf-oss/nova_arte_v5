@@ -1,4 +1,5 @@
 <?php
+include_once("config.php");
 date_default_timezone_set('America/Sao_Paulo');
 
 // Capturando as variáveis do ambiente Railway
