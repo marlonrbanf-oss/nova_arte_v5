@@ -1,0 +1,11 @@
+{
+    "name": "marlon/nova-arte",
+    "description": "Sistema de Gestão Nova Arte",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+    },
+    "scripts": {
+        "start": "php -S 0.0.0.0:8080"
+    }
+}
