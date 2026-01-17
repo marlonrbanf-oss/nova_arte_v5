@@ -1,5 +1,5 @@
 <?php
-include_once("conexao.php");
+include_once("/conexao.php");
 
 if (isset($_POST['email2']) and $_POST['email2'] != '') {
     $email_rec = $_POST['email2'];

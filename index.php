@@ -1,392 +1,319 @@
-<?php include_once("cabecalho.php") ?>
-      <!-- Swiper-->
-      <section class="section swiper-container swiper-slider swiper-slider-modern" data-loop="true" data-autoplay="5000" data-simulate-touch="true" data-nav="true" data-slide-effect="fade">
-        <div class="swiper-wrapper text-left">
-          <div class="swiper-slide context-dark" data-slide-bg="images/01.png">
-            <div class="swiper-slide-caption">
-              <div class="container">
-                <div class="row justify-content-center justify-content-xxl-start">
-                  <div class="col-md-10 col-xxl-6">
-                    <div class="slider-modern-box">
-                      <h1 class="slider-modern-title"><span data-caption-animate="slideInDown" data-caption-delay="0">Jiu-Jitsu Adulto</span></h1>
-                      <p data-caption-animate="fadeInRight" data-caption-delay="400"><strong>Jiu-Jítsu Adulto:
-“Força, técnica e confiança para a vida — dentro e fora do tatame.”</strong></p>
-                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="jiujitsu.php" data-caption-animate="slideInLeft" data-caption-delay="400">Veja sobre</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide context-dark" data-slide-bg="images/03.png">
-            <div class="swiper-slide-caption">
-              <div class="container">
-                <div class="row justify-content-center justify-content-xxl-start">
-                  <div class="col-md-10 col-xxl-6">
-                    <div class="slider-modern-box">
-                      <h1 class="slider-modern-title"><span data-caption-animate="slideInLeft" data-caption-delay="0"> Muay thai</span></h1>
-                      <p data-caption-animate="fadeInRight" data-caption-delay="400">
-“Potência, foco e superação a cada golpe.</p>
-                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="kids.php" data-caption-animate="slideInLeft" data-caption-delay="400">Veja sobre</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide" data-slide-bg="images/02.png">
-            <div class="swiper-slide-caption">
-              <div class="container">
-                <div class="row justify-content-center justify-content-xxl-start">
-                  <div class="col-md-10 col-xxl-6">
-                    <div class="slider-modern-box">
-                      <h1 class="slider-modern-title"><span data-caption-animate="slideInDown" data-caption-delay="0">Jiu-Jítsu Kids</span></h1>
-                      <p data-caption-animate="fadeInRight" data-caption-delay="400">
-“Formando campeões de caráter antes dos campeões de medalhas.".</p>
-                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="muaythai.php" data-caption-animate="slideInUp" data-caption-delay="400">Veja sobre</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Swiper Navigation-->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <!-- Swiper Pagination-->
-        <div class="swiper-pagination swiper-pagination-style-2"></div>
-      </section>
+<?php
+include_once("conexao.php");
 
-      <!-- Icons Ruby-->
-      <section class="section section-md bg-default section-top-image">
-        <div class="container">
-          <div class="row row-30 justify-content-center">
-            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0s">
-              <article class="box-icon-ruby">
-                <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
-                  <div class="unit-left">
-                    <div class="box-icon-ruby-icon linearicons-briefcase"></div>
-                  </div>
-                  <div class="unit-body">
-                    <h4 class="box-icon-ruby-title"><a href="#">JIU-JITSU ADULTO</a></h4>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay=".1s">
-              <article class="box-icon-ruby">
-                <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
-                  <div class="unit-left">
-                    <div class="box-icon-ruby-icon linearicons-smile"></div>
-                  </div>
-                  <div class="unit-body">
-                    <h4 class="box-icon-ruby-title"><a href="#">JIU-JITSU KIDS</a></h4>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay=".2s">
-              <article class="box-icon-ruby">
-                <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
-                  <div class="unit-left">
-                    <div class="box-icon-ruby-icon linearicons-user"></div>
-                  </div>
-                  <div class="unit-body">
-                    <h4 class="box-icon-ruby-title"><a href="#">MUAY THAI</a></h4>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
+if (isset($_POST['email2']) and $_POST['email2'] != '') {
+  $email_rec = $_POST['email2'];
+}
+?>
 
-      <!-- Trending products-->
-      <section class="section section-md bg-default">
-        <div class="container">
-          <div class="row row-40 justify-content-center">
-            <div class="col-sm-8 col-md-7 col-lg-6 wow fadeInLeft" data-wow-delay="0s">
-              <div class="product-banner"><img src="images/5.png" alt="" width="570" height="715"/>
-                <div class="product-banner-content">
-                  <div class="product-banner-inner" style="background-image: url(images/6.png)">
-                    <h2 class="text-primary">Roupas e Acessórios</h2>
-                    <h3 class="text-secondary-1">Loja Virtual</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-5 col-lg-6">
-              <div class="row row-30 justify-content-center">
-                <div class="col-sm-6 col-md-12 col-lg-6">
-                  <div class="oh-desktop">
-                    <!-- Product-->
-                    <article class="product product-2 box-ordered-item wow slideInRight" data-wow-delay="0s">
-                      <div class="unit flex-row flex-lg-column">
-                        <div class="unit-left">
-                          <div class="product-figure"><img src="images/7.png" alt="" width="270" height="280"/>
-                            <div class="product-button"><a class="button button-md button-white button-ujarak" href="#">COMPRAR</a></div>
-                          </div>
-                        </div>
-                        <div class="unit-body">
-                          <h6 class="product-title"><a href="#">KIMONOS</a></h6>
-                          <div class="product-price-wrap">
-                            <div class="product-price product-price-old">R$ 450,00</div>
-                            <div class="product-price">R$ 380,00</div>
-                          </div><a class="button button-sm button-secondary button-ujarak" href="#">COMPRAR</a>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-12 col-lg-6">
-                  <div class="oh-desktop">
-                    <!-- Product-->
-                    <article class="product product-2 box-ordered-item wow slideInLeft" data-wow-delay="0s">
-                      <div class="unit flex-row flex-lg-column">
-                        <div class="unit-left">
-                          <div class="product-figure"><img src="images/10.png" alt="" width="270" height="280"/>
-                            <div class="product-button"><a class="button button-md button-white button-ujarak" href="#">COMPRAR</a></div>
-                          </div>
-                        </div>
-                        <div class="unit-body">
-                          <h6 class="product-title"><a href="#"> FAIXAS</a></h6>
-                          <div class="product-price-wrap">
-                            <div class="product-price">R$ 80,00</div>
-                          </div><a class="button button-sm button-secondary button-ujarak" href="#">COMPRAR</a>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-12 col-lg-6">
-                  <div class="oh-desktop">
-                    <!-- Product-->
-                    <article class="product product-2 box-ordered-item wow slideInLeft" data-wow-delay="0s">
-                      <div class="unit flex-row flex-lg-column">
-                        <div class="unit-left">
-                          <div class="product-figure"><img src="images/8.png" alt="" width="270" height="280"/>
-                            <div class="product-button"><a class="button button-md button-white button-ujarak" href="#">COMPRAR</a></div>
-                          </div>
-                        </div>
-                        <div class="unit-body">
-                          <h6 class="product-title"><a href="#">RASTGUARD</a></h6>
-                          <div class="product-price-wrap">
-                            <div class="product-price">R$ 80,00</div>
-                          </div><a class="button button-sm button-secondary button-ujarak" href="#">COMPRAR</a>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-12 col-lg-6">
-                  <div class="oh-desktop">
-                    <!-- Product-->
-                    <article class="product product-2 box-ordered-item wow slideInRight" data-wow-delay="0s">
-                      <div class="unit flex-row flex-lg-column">
-                        <div class="unit-left">
-                          <div class="product-figure"><img src="images/9.png" alt="" width="270" height="280"/>
-                            <div class="product-button"><a class="button button-md button-white button-ujarak" href="#">COMPRAR</a></div>
-                          </div>
-                        </div>
-                        <div class="unit-body">
-                          <h6 class="product-title"><a href="#">BERMUDA</a></h6>
-                          <div class="product-price-wrap">
-                            <div class="product-price">R$ 80,00</div>
-                          </div><a class="button button-sm button-secondary button-ujarak" href="#">COMPRAR</a>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Section CTA 2-->
-      <section class="section text-center">
-        <div class="parallax-container" data-parallax-img="images/11.png">
-          <div class="parallax-content section-xl section-inset-custom-1 context-dark bg-overlay-40">
-            <div class="container">
-              <h2 class="oh font-weight-normal"><span class="d-inline-block wow slideInDown" data-wow-delay="0s">COMO QUE FUNCIONA AS AULAS DE JIU-JITSU?</span></h2>
-              <p class="oh big text-width-large"><span class="d-inline-block wow slideInUp" data-wow-delay=".2s">Na Academia Nova Arte, o Jiu-Jitsu vai muito além da luta.
- ✔ Treinos ✔ Técnicas de Jiu-Jitsu ✔ Conteúdo para iniciantes e graduados ✔ Valores, disciplina e filosofia de vida. Veja a explicação no video !</span></p><a class="button button-primary button-icon button-icon-left button-ujarak wow fadeInUp" href="https://www.youtube.com/watch?v=sH-ACGkyPCU" data-lightgallery="item" data-wow-delay=".1s"><span class="icon mdi mdi-play"></span>VER VIDEO EXPLICATIVO</a>
-            </div>
-          </div>
-        </div>
-      </section>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-      <!-- Team of professionals-->
-      <section class="section section-md bg-default">
-        <div class="container">
-          <div class="oh">
-            <h2 class="wow slideInUp" data-wow-delay="0s">NOSSOS PROFESSORES</h2>
-          </div>
-          <div class="row row-30 justify-content-center">
-            <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInRight" data-wow-delay="0s">
-              <!-- Team Classic-->
-              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="images/team-1-370x406.jpg" alt="" width="370" height="406"/></a>
-                <div class="team-classic-caption">
-                  <h5 class="team-classic-name"><a href="#">Felipe Texeira</a></h5>
-                  <p class="team-classic-status">Faixa Preta 3° grau </p>
-                  <p class="team-classic-status">Prof° Avançados</p>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInRight" data-wow-delay=".1s">
-              <!-- Team Classic-->
-              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="images/team-2-370x406.jpg" alt="" width="370" height="406"/></a>
-                <div class="team-classic-caption">
-                  <h5 class="team-classic-name"><a href="#">Hugo</a></h5>
-                  <p class="team-classic-status">Faixa Preta 1° grau</p>
-                  <p class="team-classic-status">Prof°Ini, Avançados e Kids</p>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInRight" data-wow-delay=".2s">
-              <!-- Team Classic-->
-              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="images/team-3-370x406.jpg" alt="" width="370" height="406"/></a>
-                <div class="team-classic-caption">
-                  <h5 class="team-classic-name"><a href="#">Marlon Urban Flores</a></h5>
-                  <p class="team-classic-status">Faixa Preta 1° grau</p>
-                  <p class="team-classic-status">Prof° Iniciantes e Kids</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
+<head>
+  <title>Academia Nova Arte - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
 
-      <!-- About us-->
-      <section class="section">
-        <div class="parallax-container" data-parallax-img="images/bg-parallax-2.jpg">
-          <div class="parallax-content section-xl context-dark bg-overlay-68">
-            <div class="container">
-              <div class="row row-lg row-50 justify-content-center border-classic border-classic-big">
-                <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
-                  <div class="counter-creative">
-                    <div class="counter-creative-number"><span class="counter">878</span><span class="symbol">m²</span><span class="icon counter-creative-icon fl-bigmug-line-trophy55"></span>
-                    </div>
-                    <h6 class="counter-creative-title">Maior tatame</h6>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".1s">
-                  <div class="counter-creative">
-                    <div class="counter-creative-number"><span class="counter">1</span><span class="symbol">k</span><span class="icon counter-creative-icon fl-bigmug-line-up104"></span>
-                    </div>
-                    <h6 class="counter-creative-title"> + Alunos</h6>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".2s">
-                  <div class="counter-creative">
-                    <div class="counter-creative-number"><span class="counter">60</span><span class="symbol">uni</span><span class="icon counter-creative-icon fl-bigmug-line-sun81"></span>
-                    </div>
-                    <h6 class="counter-creative-title">+ Parceiros </h6>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".3s">
-                  <div class="counter-creative">
-                    <div class="counter-creative-number"><span class="counter">3 </span><span class="symbol">p/dia</span><span class="icon counter-creative-icon fl-bigmug-line-user143"></span>
-                    </div>
-                    <h6 class="counter-creative-title">Limpeza</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="/images/favicon.ico" type="/image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
-      </section>
-      <!-- Improve your interior with deco-->
-      <section class="section section-md bg-default section-top-image">
-        <div class="container">
-          <div class="oh h2-title">
-            <h2 class="wow slideInUp" data-wow-delay="0s">Quadro de Faixas Pretas </h2>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .login-block {
+      padding: 50px 0;
+    }
+
+    .login-sec {
+      padding: 50px 30px;
+      background: #fff;
+      border-radius: 10px 0 0 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner-sec {
+      background: #000;
+      border-radius: 0 10px 10px 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner-sec img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .btn-primary {
+      background-color: #000;
+      border-color: #000;
+      border-radius: 5px;
+      padding: 10px;
+      font-weight: bold;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #333;
+      border-color: #333;
+    }
+
+    .label-input100 {
+      font-weight: 700;
+      font-size: 12px;
+      color: #555;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .input100 {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+
+    .input100:focus {
+      border-color: #000;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .copy-text {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .link-staff {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      font-size: 11px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .link-staff:hover {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .modal-header {
+      background: #000;
+      color: #fff;
+      border-bottom: none;
+    }
+
+    .modal-content {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .btn-dark-modal {
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 25px;
+    }
+  </style>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <section class="login-block mt-5">
+      <div class="container shadow-lg" style="border-radius: 10px; background: #fff;">
+        <div class="row">
+          <div class="col-md-4 login-sec">
+            <h4 class="text-center mb-4" style="font-weight: 800; letter-spacing: 1px;">NOVA ARTE BJJ</h4>
+
+            <form method="post" action="autenticar.php">
+              <span class="label-input100">Usuário (E-mail)</span>
+              <input class="input100" type="text" name="username" id="username" placeholder="Seu e-mail"
+                required>
+
+              <span class="label-input100">Senha</span>
+              <input class="input100" type="password" id="pass" name="pass" placeholder="******" required>
+
+              <button class="btn btn-primary">ENTRAR NO PAINEL</button>
+            </form>
+
+            <div class="copy-text">
+              Ainda não é aluno?
+              <a href="" class="text-dark font-weight-bold" data-toggle="modal"
+                data-target="#modal-login">Matricule-se</a>
+            </div>
+
+            <div class="text-center mt-3">
+              <a class="text-danger small" href="" data-toggle="modal" data-target="#modal-rec">Esqueceu
+                sua senha?</a>
+            </div>
+
+            <a href="/login_staff.php" class="link-staff"><i class="fas fa-user-shield"></i> Área da
+              Equipe</a>
           </div>
-          <div class="row row-30" data-lightgallery="group">
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Thumbnail Classic-->
-                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInLeft" data-wow-delay="0s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-1-370x303.jpg" alt="" width="370" height="303"/>
-                  </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-1-1200x800.jpg" data-lightgallery="item"><img src="images/grid-gallery-1-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Primeiro Faixas Preta </a></h4>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Thumbnail Classic-->
-                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInUp" data-wow-delay=".1s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-2-370x303.jpg" alt="" width="370" height="303"/>
-                  </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-2-1200x800.jpg" data-lightgallery="item"><img src="images/grid-gallery-2-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Segundo Faixas Preta</a></h4>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Thumbnail Classic-->
-                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInRight" data-wow-delay=".0s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-3-370x303.jpg" alt="" width="370" height="303"/>
-                  </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-3-800x1200.jpg" data-lightgallery="item"><img src="images/grid-gallery-3-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Terceiro Faixas Preta</a></h4>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Thumbnail Classic-->
-                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInUp" data-wow-delay=".1s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-4-370x303.jpg" alt="" width="370" height="303"/>
-                  </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-4-800x1200.jpg" data-lightgallery="item"><img src="images/grid-gallery-4-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Quarto Faixas Preta</a></h4>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Thumbnail Classic-->
-                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInLeft" data-wow-delay="0s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-5-370x303.jpg" alt="" width="370" height="303"/>
-                  </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-5-800x1200.jpg" data-lightgallery="item"><img src="images/grid-gallery-5-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Quinto Faixas Preta</a></h4>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Thumbnail Classic-->
-                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInDown" data-wow-delay=".1s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-6-370x303.jpg" alt="" width="370" height="303"/>
-                  </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-6-1200x800.jpg" data-lightgallery="item"><img src="images/grid-gallery-6-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Sexto Faixas Preta</a></h4>
-                  </div>
-                </article>
-              </div>
-            </div>
+
+          <div class="col-md-8 banner-sec d-none d-md-flex">
+            <img src="images/34.png" alt="Academia Nova Arte">
           </div>
         </div>
-      </section>
-      <?php include_once("rodape.php")?> 
+      </div>
+    </section>
+  </div>
+
+  <div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Novo Cadastro de Aluno</h5>
+          <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form method="post" id="form-cadastro">
+            <div class="form-group">
+              <label class="text-dark font-weight-bold small">NOME COMPLETO</label>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do aluno"
+                required>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="text-dark font-weight-bold small">CPF</label>
+                  <input type="text" class="form-control" id="cpf" name="cpf"
+                    placeholder="000.000.000-00" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="text-dark font-weight-bold small">TELEFONE / WHATSAPP</label>
+                  <input type="text" class="form-control" id="telefone" name="telefone"
+                    placeholder="(00) 00000-0000" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="text-dark font-weight-bold small">E-MAIL (SERÁ SEU USUÁRIO)</label>
+              <input type="email" class="form-control" id="email" name="email" required
+                value="<?php echo @$email_rec ?>">
+            </div>
+
+            <div class="form-group">
+              <label class="text-dark font-weight-bold small">ENDEREÇO</label>
+              <input type="text" class="form-control" id="endereco" name="endereco"
+                placeholder="Rua, Número, Bairro" required>
+            </div>
+
+            <div class="form-group">
+              <label class="text-dark font-weight-bold small">CRIE UMA SENHA</label>
+              <input type="password" class="form-control" id="senha" name="senha"
+                placeholder="Mínimo 6 caracteres" required>
+            </div>
+
+            <div align="center" id="mensagem" class="mt-3"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button id="btn-cadastro" class="btn btn-dark-modal">FINALIZAR MATRÍCULA</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <!-- Global Mailform Output-->
-    <div class="snackbars" id="form-output-global"></div>
-    <!-- Javascript-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-    <!-- coded by Ragnar-->
-  </body>
+  </div>
+
+  <div class="modal fade" id="modal-rec" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Recuperar Senha</h5>
+          <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form method="post">
+            <div class="form-group">
+              <label class="text-dark">Digite seu e-mail cadastrado</label>
+              <input type="email" class="form-control" id="email-recuperar" name="email-recuperar"
+                required>
+            </div>
+            <div align="center" id="mensagem2"></div>
+        </div>
+        <div class="modal-footer">
+          <button id="btn-rec" class="btn btn-dark-modal">ENVIAR SENHA</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+  <script src="js/mascaras.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#btn-cadastro').click(function(event) {
+        event.preventDefault();
+        $.ajax({
+          url: "cadastrar-usuario.php",
+          method: "post",
+          data: $('#form-cadastro').serialize(),
+          dataType: "text",
+          success: function(mensagem) {
+            $('#mensagem').removeClass()
+            if (mensagem.trim() == 'Cadastrado com Sucesso!!') {
+              $('#mensagem').addClass('text-success')
+              document.getElementById('username').value = document.getElementById(
+                'email').value;
+              document.getElementById('pass').value = document.getElementById(
+                'senha').value;
+              alert("Cadastro realizado! Você já pode entrar.");
+              $('#modal-login').modal('hide');
+            } else {
+              $('#mensagem').addClass('text-danger')
+              $('#mensagem').text(mensagem)
+            }
+          },
+        })
+      })
+    })
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#btn-rec').click(function(event) {
+        event.preventDefault();
+        $.ajax({
+          url: "recuperar.php",
+          method: "post",
+          data: $('form').serialize(),
+          dataType: "text",
+          success: function(mensagem) {
+            $('#mensagem2').removeClass()
+            if (mensagem.trim() == 'Senha enviada para o seu Email!') {
+              $('#mensagem2').addClass('text-success')
+              $('#email-recuperar').val('')
+            } else {
+              $('#mensagem2').addClass('text-danger')
+            }
+            $('#mensagem2').text(mensagem)
+          },
+        })
+      })
+    })
+  </script>
+</body>
+
 </html>
