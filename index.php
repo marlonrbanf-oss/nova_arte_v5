@@ -162,12 +162,12 @@ if (isset($_POST['email2']) and $_POST['email2'] != '') {
                 sua senha?</a>
             </div>
 
-            <a href="/login_staff.php" class="link-staff"><i class="fas fa-user-shield"></i> Área da
+            <a href="<?php echo $url_site; ?>login_staff.php" class="link-staff"><i class="fas fa-user-shield"></i> Área da
               Equipe</a>
           </div>
 
           <div class="col-md-8 banner-sec d-none d-md-flex">
-            <img src="images/34.png" alt="Academia Nova Arte">
+            <img src="<?php echo $url_site; ?>images/34.png" alt="Academia Nova Arte">
           </div>
         </div>
       </div>
