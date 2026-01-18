@@ -1,11 +1,15 @@
 {
-    "name": "marlon/nova-arte",
-    "description": "Sistema de Gestão Nova Arte",
+    "name": "marlon/nova-arte-bjj",
+    "description": "Sistema de Academia Nova Arte",
     "type": "project",
     "require": {
-        "php": ">=8.0"
+        "php": ">=8.0",
+        "ext-pdo_mysql": "*",
+        "ext-gd": "*"
     },
-    "scripts": {
-        "start": "php -S 0.0.0.0:8080"
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     }
 }
